@@ -9,6 +9,18 @@ class Register_model extends CI_Model {
           parent::__construct();
   }
 
+  public function getUser($username, $password){
+
+    $query = $this->db->where(['username' => $username, 'password' => sha1($password)])->get('users');
+    $resultArray = $query->result_array();
+
+    if($query->num_rows() >= 1){
+      return $resultArray;
+    }else {
+      return array();
+    }
+  }
+
   public function addUser(){
     $data = array(
       'firstname' => $this->input->post('nom'),
@@ -18,7 +30,10 @@ class Register_model extends CI_Model {
       'password' => sha1($this->input->post('password')) ,
       'role' => $this->input->post('role')
     );
-    $this->db->insert('users',$data);
-    return true;
+    if($this->db->insert('users',$data)){
+      return true;
+    }else {
+      return false;
+    }
   }
 }
