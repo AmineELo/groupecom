@@ -27,6 +27,7 @@ class Register_model extends CI_Model {
       'lastname' => $this->input->post('prenom'),
       'email' => $this->input->post('email') ,
       'username' => $this->input->post('username') ,
+      'image' => 'img/users/default.png',
       'password' => sha1($this->input->post('password')) ,
       'role' => $this->input->post('role')
     );
