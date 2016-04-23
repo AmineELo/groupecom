@@ -498,7 +498,8 @@ dd{padding: 5px 0px;}
     
 .btn-default{border-color: #F4F4F4; background: #F4F4F4; color: #333;}
 .btn-default:hover{background-color: #EEEEEE; background-image: none;}
-    .btn-default.btn-clean{border-color: #F4F4F4; background: transparent; color: #FFF;}
+
+    .btn-default.btn-clean{border-color: #6F7B66; background: transparent; color: #3D403B;}
     .btn-default .caret{border-top-color: #FFF;}
     .dropup .btn-default .caret{border-bottom-color: #FFF;}
 
