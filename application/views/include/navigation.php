@@ -41,7 +41,7 @@
                        <div class="nav navbar-nav  navbar-right">
                             <li class="sep"></li>
                              <li>
-                                  <a href="#" style="text-transform: capitalize;">
+                                  <a href="<?php echo site_url('singnin') ?>" style="text-transform: capitalize;">
                                       <span class="icon-signin"></span>Connectez-vous
                                   </a>
                               </li>
