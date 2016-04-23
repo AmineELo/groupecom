@@ -38,6 +38,25 @@
                             </li>
 
                        </ul>
+                       <?php if(isset($_SESSION['role']))
+                       {?>
+                         <div class="nav navbar-nav  navbar-right">
+
+                               <li>
+                                    <a href="#" style="text-transform: capitalize;">
+                                        <span class="icon-user"></span><?php echo $_SESSION['firstname'].' '.$_SESSION['lastname']; ?>
+                                    </a>
+                                </li>
+                                <li>
+                                     <a href="<?php echo site_url('logout')?>" style="text-transform: capitalize;">
+                                         <span class="icon-signout"></span>Déconnexion
+                                     </a>
+                                 </li>
+                          </div>
+
+                        <?php }
+                        else {
+                        ?>
                        <div class="nav navbar-nav  navbar-right">
                             <li class="sep"></li>
                              <li>
@@ -46,6 +65,8 @@
                                   </a>
                               </li>
                         </div>
+                        <?php }
+                        ?>
                    </div>
                </nav>
 

@@ -49,7 +49,7 @@
                                 <div class="input-group-addon">
                                     <span class="icon-user"></span>
                                 </div>
-                                <input type="text" pattern="[a-z]" class="form-control" name="nom" placeholder="Nom" required/>
+                                <input type="text"  class="form-control" name="nom" placeholder="Nom" required/>
                                 <p class="help-block"></p>
                             </div>
                         </div>
