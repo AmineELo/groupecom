@@ -45,16 +45,39 @@
             <div class="block block-transparent">
                 <div class="head">
                     <div class="user">
+                      <?php if(isset($_SESSION['role'])) {?>
                         <div class="info user-change">
                             <img src="img/example/user/dmitry_b.jpg" class="img-circle img-thumbnail"/>
                             <div class="user-change-button">
                                 <span class="icon-off"></span>
                             </div>
                         </div>
+                        <?php } else {?>
+                        <div class="user">
+                              <div class="info user-change" style="opacity: 1;">
+                                  <img src="img/user.jpg" class="img-circle img-thumbnail">
+                              </div>
+                        </div>
+                        <?php }?>
                     </div>
+
+
                 </div>
                 <div class="content controls npt">
+                  <?php if(isset($_SESSION['role']))
+                  { ?>
                     <div class="form-row user-change-row">
+                        <div class="col-md-12">
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <span class="icon-user"></span>
+                                </div>
+                                <input type="text" class="form-control" value="<?php echo $_SESSION['username']; ?>" name="username" placeholder="Login"  style="color:#3D403B;background-color: #eee"/>
+                            </div>
+                        </div>
+                    </div>
+                  <?php } else {?>
+                    <div class="form-row user-change-row" style="display: block;">
                         <div class="col-md-12">
                             <div class="input-group">
                                 <div class="input-group-addon">
@@ -64,6 +87,7 @@
                             </div>
                         </div>
                     </div>
+                    <?php } ?>
                     <div class="form-row">
                         <div class="col-md-12">
                             <div class="input-group">
@@ -76,7 +100,7 @@
                     </div>
                     <div class="form-row">
                         <div class="col-md-6">
-                            <a href="<?php echo site_url('singnup') ?>" class="btn btn-default btn-block btn-clean">S'inscrire</a>
+                            <a href="<?php echo site_url('signup') ?>" class="btn btn-default btn-block btn-clean">S'inscrire</a>
                         </div>
                         <div class="col-md-6">
                             <input type="submit" class="btn btn-default btn-block btn-clean" value="Connexion"/>
