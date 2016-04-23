@@ -29,7 +29,6 @@
 
     <div class="container container- theme-black container-fixed">
       <?php
-
           $inattributes=array('method'=>'post','role'=>'form');
           echo form_open('Singnin/validation',$inattributes);
           if($this->session->flashdata('errors') )
@@ -41,7 +40,6 @@
            {
           echo ' <div class="alert alert-default"><strong>Oh snap!</strong> '.$this->session->flashdata('data_error').'</div>';
           }
-
          ?>
         <div class="login-block">
             <div class="block block-transparent">
@@ -106,6 +104,19 @@
         ?>
 
     </div>
+    <script>
+    /* user change */
+    $(document).ready(function(){
+           $(".user-change-button").click(function(){
+              $(this).parents(".block").find('.user-change').animate({opacity: 0},400,function(){
+                  $(this).find('img').attr('src','img/user.jpg');
+                  $(this).animate({opacity: 1},400);
+              });
+              $(this).parents(".block").find(".user-change-row").fadeIn(800);
+              $(this).remove();
+           });
+   });
+    </script>
 
 </body>
 

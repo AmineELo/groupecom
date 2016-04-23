@@ -12,6 +12,6 @@ class Signup extends CI_Controller {
   public function register(){
     $this->load->model('Register_model');
     $this->Register_model->addUser();
-    redirect('/Accueil');
+    redirect('/singnin');
   }
 }

@@ -40,7 +40,7 @@ class Singnin extends CI_Controller {
 					var_dump($tableau);
 					if(empty($tableau))
 					{
-						$data_error['data_error']="Invalid Login, You should verify your data !";
+						 $data_error['data_error']="Invalid Login, You should verify your data !";
 				  	 $this->session->set_flashdata($data_error);
 						redirect('singnin');
 					}

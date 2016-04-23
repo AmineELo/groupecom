@@ -107,15 +107,7 @@ $(document).ready(function(){
     });
     /* eof input file */ 
 
-    /* user change */
-    $(".user-change-button").click(function(){       
-       $(this).parents(".block").find('.user-change').animate({opacity: 0},400,function(){
-           $(this).find('img').attr('src','img/user.jpg');
-           $(this).animate({opacity: 1},400);
-       });
-       $(this).parents(".block").find(".user-change-row").fadeIn(800);
-       $(this).remove();              
-    });
+   
     
     /* table checkall */
     $("table .checkall").click(function(){           
