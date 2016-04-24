@@ -31,6 +31,16 @@ class Register_model extends CI_Model {
     }
   }
 
+  public function checkUserWithEmail($email){
+    $query = $this->db->where(['email' => $email])->get('users');
+
+    if($query->num_rows() >= 1){
+      return true;
+    }else {
+      return false;
+    }
+  }
+
   public function addUser(){
     $data = array(
       'firstname' => $this->input->post('nom'),
