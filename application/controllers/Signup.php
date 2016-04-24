@@ -26,6 +26,13 @@ class Signup extends CI_Controller {
 		}
 	}
 
+	public function checkUserWithEmail(){
+		if($this->input->method(true) == 'POST'){
+			$this->load->model('Register_model');
+			echo $this->Register_model->checkUserWithEmail($this->input->post('email')) ? 'false' : 'true';
+		}
+	}
+
   public function register(){
     $this->load->model('Register_model');
     $query = $this->Register_model->addUser();

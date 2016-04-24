@@ -30,7 +30,16 @@ $().ready(function(){
       },
       email: {
         required : true,
-        email : true
+        email : true,
+        remote: {
+          url: $('#url').val() + 'Signup/checkUserWithEmail',
+          type: 'post',
+          data: {
+            username : function(){
+              return $('#email').val();
+            }
+          }
+        }
       },
       password: {
         required : true,
@@ -59,7 +68,8 @@ $().ready(function(){
       },
       email: {
         required : 'Ce champ est obligatoire',
-        email : 'saisissez un email valide'
+        email : 'saisissez un email valide',
+        remote : 'Cette adresse e-mail est dejas associer a un autre compte'
       },
       password: {
         required : 'Ce champ est obligatoire',
