@@ -19,6 +19,13 @@ class Signup extends CI_Controller {
 		}
 	}
 
+	public function checkUser(){
+		if($this->input->method(true) == 'POST'){
+			$this->load->model('Register_model');
+			echo $this->Register_model->checkUser($this->input->post('username')) ? 'false' : 'true';
+		}
+	}
+
   public function register(){
     $this->load->model('Register_model');
     $query = $this->Register_model->addUser();
