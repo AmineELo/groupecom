@@ -21,8 +21,9 @@ class Singnin extends CI_Controller {
 
 	public function validation()
 	{
-		$this->form_validation->set_rules('username','Username','required|min_length[5]|max_length[30]');
-		$this->form_validation->set_rules('password','User password','required|min_length[5]|max_length[30]');
+		$this->form_validation->set_rules('username','Nom d\'utilisateur','required|min_length[5]|max_length[30]');
+		$this->form_validation->set_rules('password','Mot de passe','required|min_length[5]|max_length[30]');
+		$this->form_validation->set_message('required','{field} est obligatoir');
 
 			if($this->form_validation->run()==FALSE)
 				{
@@ -40,7 +41,7 @@ class Singnin extends CI_Controller {
 					var_dump($tableau);
 					if(empty($tableau))
 					{
-						 $data_error['data_error']="Invalid Login, You should verify your data !";
+						 $data_error['data_error']="les données sont incorrectes ";
 				  	 $this->session->set_flashdata($data_error);
 						redirect('singnin');
 					}

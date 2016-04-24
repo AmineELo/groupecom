@@ -28,24 +28,37 @@
 <body class="wall-num10" data-settings="open" style="">
 
     <div class="container container- theme-black container-fixed">
+
       <?php
           $inattributes=array('method'=>'post','role'=>'form');
           echo form_open('Singnin/validation',$inattributes);
+
           if($this->session->flashdata('errors') )
-           {
-          echo  ' <div class="alert alert-default"><strong>Oh snap!</strong> '.$this->session->flashdata('errors').'</div>';
+           {echo'<center>';
+             echo  ' <div class="alert alert-danger" style="width:50%">
+               <button type="button" class="close" data-dismiss="alert">×</button>
+                 '.$this->session->flashdata('errors').'
+            </div>';
+            echo'</center>';
+
           }
 
           if($this->session->flashdata('data_error') )
-           {
-          echo ' <div class="alert alert-default"><strong>Oh snap!</strong> '.$this->session->flashdata('data_error').'</div>';
+           {echo'<center>';
+             echo  ' <div class="alert alert-danger" style="width:50%">
+                <b>Error!</b> '.$this->session->flashdata('data_error').'
+                <button type="button" class="close" data-dismiss="alert">×</button>
+            </div>';
+            echo'</center>';
           }
+
          ?>
         <div class="login-block">
             <div class="block block-transparent">
+
                 <div class="head">
                     <div class="user">
-                      <?php if(isset($_SESSION['role'])) {?>
+                      <?php if(isset($_SESSION['username'])) {?>
                         <div class="info user-change">
                             <img src="img/example/user/dmitry_b.jpg" class="img-circle img-thumbnail"/>
                             <div class="user-change-button">
@@ -64,7 +77,7 @@
 
                 </div>
                 <div class="content controls npt">
-                  <?php if(isset($_SESSION['role']))
+                  <?php if(isset($_SESSION['username']))
                   { ?>
                     <div class="form-row user-change-row">
                         <div class="col-md-12">
@@ -108,11 +121,11 @@
                     </div>
                     <div class="form-row">
                         <div class="col-md-12">
-                            <a href="#" class="btn btn-link btn-block" style="color:#3D403B;">Forgot your password?</a>
+                            <a href="#" class="btn btn-link btn-block" style="color:#3D403B;">Mot de passe oublié ?</a>
                         </div>
                     </div>
                     <div class="form-row">
-                        <div class="col-md-12 tac" style="color:#6E7A65;"><strong>OR USE</strong></div>
+                        <div class="col-md-12 tac" style="color:#6E7A65;"><strong>Ou bien utilisez</strong></div>
                     </div>
                     <div class="form-row">
                         <div class="col-md-12">
@@ -121,7 +134,9 @@
                     </div>
 
                 </div>
+
             </div>
+
         </div>
         <?php
         echo form_close();
@@ -132,6 +147,7 @@
     /* user change */
     $(document).ready(function(){
            $(".user-change-button").click(function(){
+              $(this).load('Logout/destroy_all');
               $(this).parents(".block").find('.user-change').animate({opacity: 0},400,function(){
                   $(this).find('img').attr('src','img/user.jpg');
                   $(this).animate({opacity: 1},400);
