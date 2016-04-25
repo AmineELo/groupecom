@@ -60,7 +60,7 @@
                     <div class="user">
                       <?php if(isset($_SESSION['username'])) {?>
                         <div class="info user-change">
-                            <img src="img/example/user/dmitry_b.jpg" class="img-circle img-thumbnail"/>
+                            <img src="<?php echo $_SESSION['image'];?>" class="img-circle img-thumbnail"/>
                             <div class="user-change-button">
                                 <span class="icon-off"></span>
                             </div>
@@ -73,8 +73,7 @@
                         </div>
                         <?php }?>
                     </div>
-
-
+                    
                 </div>
                 <div class="content controls npt">
                   <?php if(isset($_SESSION['username']))
