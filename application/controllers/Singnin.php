@@ -115,7 +115,8 @@ class Singnin extends CI_Controller {
 		    echo 'Facebook SDK returned an error: ' . $e->getMessage();
 		  }
 
-			if($this->Register_model->checkUserWithEmail(isset($data['email') ? $data['email')] : strtolower($dataSet['first_name']).'.'.strtolower($dataSet['last_name']))){
+			$dataTest = isset($data['email']) ? $data['email'] : strtolower($dataSet['first_name']).'.'.strtolower($dataSet['last_name']);
+			if($this->Register_model->checkUserWithEmail($dataTest)){
 
 				$userData = $this->Register_model->getUserWithMail($data['email']);
 				$this->session->set_userdata($userData[0]);
