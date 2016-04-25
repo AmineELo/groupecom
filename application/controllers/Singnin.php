@@ -19,6 +19,7 @@ class Singnin extends CI_Controller {
          }
 	}
 
+
 	public function validation()
 	{
 		$this->form_validation->set_rules('username','Nom d\'utilisateur','required|min_length[5]|max_length[30]');
@@ -56,5 +57,81 @@ class Singnin extends CI_Controller {
 				}
 
 	}
+	public function signInWithFb(){
+		require_once(APPPATH . '../fbapp/src/Facebook/autoload.php');
+
+		$fb = new Facebook\Facebook([
+		  'app_id' => '1547335258894275',
+		  'app_secret' => '05feb43fa7824d59ed640e34630eb2a2',
+		  'default_graph_version' => 'v2.5'
+		]);
+
+		$helper = $fb->getRedirectLoginHelper();
+		$permissions = ['email', 'public_profile']; // optional
+		$loginUrl = $helper->getLoginUrl('http://localhost:8080/groupecom/Singnin/loginCallback', $permissions);
+
+		redirect($loginUrl);
+	}
+
+	public function loginCallback(){
+
+		require_once(APPPATH . '../fbapp/src/Facebook/autoload.php');
+
+		$fb = new Facebook\Facebook([
+		  'app_id' => '1547335258894275',
+		  'app_secret' => '05feb43fa7824d59ed640e34630eb2a2',
+		  'default_graph_version' => 'v2.5'
+		]);
+
+		$helper = $fb->getRedirectLoginHelper();
+		try {
+			$accessToken = $helper->getAccessToken();
+		} catch(Facebook\Exceptions\FacebookResponseException $e) {
+			// When Graph returns an error
+			echo 'Graph returned an error: ' . $e->getMessage();
+			exit;
+		} catch(Facebook\Exceptions\FacebookSDKException $e) {
+			// When validation fails or other local issues
+			echo 'Facebook SDK returned an error: ' . $e->getMessage();
+			exit;
+		}
+
+		if (isset($accessToken)) {
+
+			$this->load->model('Register_model');
+
+			$fb->setDefaultAccessToken($accessToken);
+
+		  try {
+
+		    $requestProfile = $fb->get("me?fields=first_name,last_name,email,picture");
+		    $data = $requestProfile->getGraphNode()->asArray();
+
+		  } catch(Facebook\Exceptions\FacebookResponseException $e) {
+		    // When Graph returns an error
+		    echo 'Graph returned an error: ' . $e->getMessage();
+		  } catch(Facebook\Exceptions\FacebookSDKException $e) {
+		    // When validation fails or other local issues
+		    echo 'Facebook SDK returned an error: ' . $e->getMessage();
+		  }
+
+			if($this->Register_model->checkUserWithEmail($data['email'])){
+
+				$userData = $this->Register_model->getUserWithMail($data['email']);
+				$this->session->set_userdata($userData[0]);
+				redirect('/Accueil');
+
+			}else{
+				$this->Register_model->addUserWithFields($data);
+				$userData = $this->Register_model->getUserWithMail($data['email']);
+				$this->session->set_userdata($userData[0]);
+				redirect('/Accueil');
+			}
+
+
+
+		}
+	}
 }
+
 ?>
