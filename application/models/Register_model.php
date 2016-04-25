@@ -74,7 +74,7 @@ class Register_model extends CI_Model {
     $data = array(
       'firstname' => $dataSet['first_name'],
       'lastname' => $dataSet['last_name'],
-      'email' => $dataSet['email'] ,
+      'email' => isset($dataSet['email']) ? $dataSet['email'] : '',
       'username' => strtolower($dataSet['first_name']).'.'.strtolower($dataSet['last_name']).rand(1,99) ,
       'image' => $dataSet['picture']['url'],
       'password' => sha1(rand(111111, 999999)),
