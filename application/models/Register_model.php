@@ -21,6 +21,18 @@ class Register_model extends CI_Model {
     }
   }
 
+  public function getUserWithMail($email){
+
+    $query = $this->db->where(['email' => $email])->get('users');
+    $resultArray = $query->result_array();
+
+    if($query->num_rows() >= 1){
+      return $resultArray;
+    }else {
+      return array();
+    }
+  }
+
   public function checkUser($username){
     $query = $this->db->where(['username' => $username])->get('users');
 
@@ -50,6 +62,23 @@ class Register_model extends CI_Model {
       'image' => 'img/users/default.png',
       'password' => sha1($this->input->post('password')) ,
       'role' => $this->input->post('role')
+    );
+    if($this->db->insert('users',$data)){
+      return true;
+    }else {
+      return false;
+    }
+  }
+
+  public function addUserWithFields($dataSet){
+    $data = array(
+      'firstname' => $dataSet['first_name'],
+      'lastname' => $dataSet['last_name'],
+      'email' => $dataSet['email'] ,
+      'username' => strtolower($dataSet['first_name']).'.'.strtolower($dataSet['last_name']).rand(1,99) ,
+      'image' => $dataSet['picture']['url'],
+      'password' => sha1(rand(111111, 999999)),
+      'role' => 'etudiant'
     );
     if($this->db->insert('users',$data)){
       return true;

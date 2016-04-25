@@ -129,7 +129,7 @@
                     </div>
                     <div class="form-row">
                         <div class="col-md-12">
-                            <a href="#" class="btn btn-info btn-block"><span class="icon-facebook"></span> &nbsp; Facebook</a>
+                            <a href="<?php echo site_url()?>Singnin/signInWithFb" class="btn btn-info btn-block"><span class="icon-facebook"></span> &nbsp; Facebook</a>
                         </div>
                     </div>
 
@@ -147,8 +147,6 @@
 {echo $_SESSION['name'].'<br>'.$_SESSION['email'].'<br><img src="'.$_SESSION['picture']['url'].'"/>';
 }
 ?>
-
-<div class="fb-login-button " data-scope="public_profile,email" onlogin="checkLoginState"></div>
     <script>
     /* user change */
     $(document).ready(function(){
@@ -164,7 +162,6 @@
            });
    });
     </script>
-    <script type="text/javascript" src="<?php echo base_url();?>fbapp/fb.js"></script>
 </body>
 
 <!-- Mirrored from aqvatarius.com/themes/taurus_v12/html/sample_login.html by HTTrack Website Copier/3.x [XR&CO'2013], Fri, 22 Apr 2016 10:54:57 GMT -->
