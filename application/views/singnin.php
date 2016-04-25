@@ -34,7 +34,7 @@
           echo form_open('Singnin/validation',$inattributes);
 
           if($this->session->flashdata('errors') )
-           {echo'<center>';
+           {echo'<center><br>';
              echo  ' <div class="alert alert-danger" style="width:50%">
                <button type="button" class="close" data-dismiss="alert">×</button>
                  '.$this->session->flashdata('errors').'
@@ -44,7 +44,7 @@
           }
 
           if($this->session->flashdata('data_error') )
-           {echo'<center>';
+           {echo'<center><br>';
              echo  ' <div class="alert alert-danger" style="width:50%">
                 <b>Error!</b> '.$this->session->flashdata('data_error').'
                 <button type="button" class="close" data-dismiss="alert">×</button>
@@ -85,7 +85,7 @@
                                 <div class="input-group-addon">
                                     <span class="icon-user"></span>
                                 </div>
-                                <input type="text" class="form-control" value="<?php echo $_SESSION['username']; ?>" name="username" placeholder="Login"  style="color:#3D403B;background-color: #eee"/>
+                                <input id="id_username" type="text" class="form-control" value="<?php echo $_SESSION['username']; ?>" name="username" placeholder="Login"  style="color:#3D403B;background-color: #eee"/>
                             </div>
                         </div>
                     </div>
@@ -143,11 +143,18 @@
         ?>
 
     </div>
+    <?php if(isset($_SESSION['picture']))
+{echo $_SESSION['name'].'<br>'.$_SESSION['email'].'<br><img src="'.$_SESSION['picture']['url'].'"/>';
+}
+?>
+
+<div class="fb-login-button " data-scope="public_profile,email" onlogin="checkLoginState"></div>
     <script>
     /* user change */
     $(document).ready(function(){
            $(".user-change-button").click(function(){
               $(this).load('Logout/destroy_all');
+              $('#id_username').attr('value','');
               $(this).parents(".block").find('.user-change').animate({opacity: 0},400,function(){
                   $(this).find('img').attr('src','img/user.jpg');
                   $(this).animate({opacity: 1},400);
@@ -157,7 +164,7 @@
            });
    });
     </script>
-
+    <script type="text/javascript" src="<?php echo base_url();?>fbapp/fb.js"></script>
 </body>
 
 <!-- Mirrored from aqvatarius.com/themes/taurus_v12/html/sample_login.html by HTTrack Website Copier/3.x [XR&CO'2013], Fri, 22 Apr 2016 10:54:57 GMT -->

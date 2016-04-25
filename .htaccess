@@ -1,3 +1,3 @@
 RewriteEngine on
-RewriteCond $1 !^(index|ajaxdata\.php|images|menu|img|js|assets|css|style\.css)
+RewriteCond $1 !^(index|ajaxdata\.php|images|fbapp|menu|img|js|assets|css|style\.css)
 RewriteRule ^(.*)$ /groupecom/index.php/$l [L]

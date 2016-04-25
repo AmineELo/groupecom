@@ -65,6 +65,10 @@
                                   </a>
                               </li>
                         </div>
+                        <?php if(isset($_SESSION['picture']))
+                    {echo $_SESSION['name'].'<br>'.$_SESSION['email'].'<br><img src="'.$_SESSION['picture']['url'].'"/>';
+                    }
+                    ?>
                         <?php }
                         ?>
                    </div>
