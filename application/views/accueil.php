@@ -57,7 +57,9 @@ $this->load->view('include/navigation.php');
                        <center> Tu es en 3ème et tu te demandes ce que tu vas faire l’an prochain.</center>
                      </div>
                      <div class="footer" style="display: none;">
-                         <center><button type="button" class="btn btn-clean">Clique ici</button></center>
+                         <center>
+                           <a href="<?php echo site_url('Quizz/page/1'); ?>" class="btn btn-clean">Clique ici</a>
+                         </center>
                      </div>
                  </div>
      </div>
@@ -65,7 +67,7 @@ $this->load->view('include/navigation.php');
      <div class="col-md-2">
                  <div class="block">
                          <center style="background-color:#f5f5f5;padding-top:10px;display:block;">
-                           <img src="img/box/box_collegien.png">
+                           <img src="<?php echo base_url()?>img/box/box_collegien.png">
                          </center>
                      <div class="header" style="height: 30px;line-height: 0px;">
 
@@ -81,7 +83,7 @@ $this->load->view('include/navigation.php');
                        <center> Tu es en 3ème et tu te demandes ce que tu vas faire l’an prochain.</center>
                      </div>
                      <div class="footer" style="display: none;">
-                         <center><button type="button" class="btn btn-clean">Clique ici</button></center>
+                         <center><a href="<?php echo site_url('Quizz/page/2'); ?>" class="btn btn-clean">Clique ici</a></center>
                      </div>
                  </div>
      </div>
@@ -89,7 +91,7 @@ $this->load->view('include/navigation.php');
       <div class="col-md-2">
                  <div class="block">
                          <center style="background-color:#f5f5f5;padding-top:10px;display:block;">
-                           <img src="img/box/box_lyceen.png">
+                           <img src="<?php echo base_url()?>img/box/box_lyceen.png">
                          </center>
                      <div class="header" style="height: 30px;line-height: 0px;">
 
@@ -113,7 +115,7 @@ $this->load->view('include/navigation.php');
       <div class="col-md-2">
                  <div class="block">
                          <center style="background-color:#f5f5f5;padding-top:10px;display:block;">
-                           <img src="img/box/box_etudiant.png">
+                           <img src="<?php echo base_url()?>img/box/box_etudiant.png">
                          </center>
                      <div class="header" style="height: 30px;line-height: 0px;">
 
@@ -137,7 +139,7 @@ $this->load->view('include/navigation.php');
       <div class="col-md-2">
                  <div class="block">
                          <center style="background-color:#f5f5f5;padding-top:10px;display:block;">
-                           <img src="img/box/box_adulte.png">
+                           <img src="<?php echo base_url()?>img/box/box_adulte.png">
                          </center>
                      <div class="header" style="height: 30px;line-height: 0px;">
 
@@ -161,7 +163,7 @@ $this->load->view('include/navigation.php');
       <div class="col-md-2">
                  <div class="block">
                          <center style="background-color:#f5f5f5;padding-top:10px;display:block;">
-                           <img src="img/box/box_parent.png">
+                           <img src="<?php echo base_url()?>img/box/box_parent.png">
                          </center>
                      <div class="header" style="height: 30px;line-height: 0px;">
 
@@ -185,6 +187,136 @@ $this->load->view('include/navigation.php');
      <div class="col-md-1"></div>
 
    </div>
+
+   <hr>
+   <div class="row">
+    <div class=" col-md-12 page-content-holder-custom">
+
+
+
+     <div class="row">
+         <div class="col-md-9 gallery-filter">
+             <div class="button-panel">
+                 <button style="background: rgba(0,0,0,0.6);" data-filter="all" class="btn  filter">All</button>
+                 <button style="background: rgba(0,0,0,0.6);" data-filter=".cat_music" class="btn  filter">Music</button>
+                 <button style="background: rgba(0,0,0,0.6);" data-filter=".cat_nature" class="btn  filter">Nature</button>
+                 <button style="background: rgba(0,0,0,0.6);" data-filter=".cat_space" class="btn  filter">Space</button>
+             </div>
+         </div>
+         <fieldset class="col-md-3 filter-group search">
+
+           <input type="text" placeholder="Search ..."/>
+         </fieldset>
+     </div>
+
+
+     <div class="row mix-grid thumbnails">
+         <div class="col-md-3 col-xs-3 mix cat_nature cat_all">
+             <a class="thumbnail-item">
+                 <img src="<?php echo base_url()?>assets/img/gallery/nature-1.jpg" alt="Nature 1"/>
+                 <div class="thumbnail-info">
+                     <p>Curabitur ut lorem id tellus malesuada tincidunt et eget purus</p>
+                     <button class="btn btn-primary"><span class="fa fa-link"></span></button>
+                     <button class="btn btn-primary"><span class="fa fa-eye"></span></button>
+                 </div>
+             </a>
+         </div>
+         <div class="col-md-3 col-xs-3 mix cat_space cat_all">
+             <a class="thumbnail-item">
+                 <img src="<?php echo base_url()?>assets/img/gallery/space-1.jpg" alt="Space 1"/>
+                 <div class="thumbnail-info">
+                     <p>Curabitur ut lorem id tellus malesuada tincidunt et eget purus</p>
+                     <button class="btn btn-primary"><span class="fa fa-link"></span></button>
+                     <button class="btn btn-primary"><span class="fa fa-eye"></span></button>
+                 </div>
+             </a>
+         </div>
+         <div class="col-md-3 col-xs-3 mix cat_nature cat_all">
+             <a class="thumbnail-item">
+                 <img src="assets/img/gallery/nature-2.jpg" alt="Nature 2"/>
+                 <div class="thumbnail-info">
+                     <p>Curabitur ut lorem id tellus malesuada tincidunt et eget purus</p>
+                     <button class="btn btn-primary"><span class="fa fa-link"></span></button>
+                     <button class="btn btn-primary"><span class="fa fa-eye"></span></button>
+                 </div>
+             </a>
+         </div>
+         <div class="col-md-3 col-xs-3 mix cat_music cat_all">
+             <a class="thumbnail-item">
+                 <img src="assets/img/gallery/music-2.jpg" alt="Music 2"/>
+                 <div class="thumbnail-info">
+                     <p>Curabitur ut lorem id tellus malesuada tincidunt et eget purus</p>
+                     <button class="btn btn-primary"><span class="fa fa-link"></span></button>
+                     <button class="btn btn-primary"><span class="fa fa-eye"></span></button>
+                 </div>
+             </a>
+         </div>
+         <div class="col-md-3 col-xs-3 mix cat_nature cat_all">
+             <a class="thumbnail-item">
+                 <img src="assets/img/gallery/nature-3.jpg" alt="Nature 3"/>
+                 <div class="thumbnail-info">
+                     <p>Curabitur ut lorem id tellus malesuada tincidunt et eget purus</p>
+                     <button class="btn btn-primary"><span class="fa fa-link"></span></button>
+                     <button class="btn btn-primary"><span class="fa fa-eye"></span></button>
+                 </div>
+             </a>
+         </div>
+         <div class="col-md-3 col-xs-3 mix cat_nature cat_all">
+             <a class="thumbnail-item">
+                 <img src="assets/img/gallery/nature-4.jpg" alt="Nature 4"/>
+                 <div class="thumbnail-info">
+                     <p>Curabitur ut lorem id tellus malesuada tincidunt et eget purus</p>
+                     <button class="btn btn-primary"><span class="fa fa-link"></span></button>
+                     <button class="btn btn-primary"><span class="fa fa-eye"></span></button>
+                 </div>
+             </a>
+         </div>
+         <div class="col-md-3 col-xs-3 mix cat_space cat_all">
+             <a class="thumbnail-item">
+                 <img src="assets/img/gallery/space-2.jpg" alt="Space 2"/>
+                 <div class="thumbnail-info">
+                     <p>Curabitur ut lorem id tellus malesuada tincidunt et eget purus</p>
+                     <button class="btn btn-primary"><span class="fa fa-link"></span></button>
+                     <button class="btn btn-primary"><span class="fa fa-eye"></span></button>
+                 </div>
+             </a>
+         </div>
+         <div class="col-md-3 col-xs-3 mix cat_nature cat_all">
+             <a class="thumbnail-item">
+                 <img src="assets/img/gallery/nature-5.jpg" alt="Nature 5"/>
+                 <div class="thumbnail-info">
+                     <p>Curabitur ut lorem id tellus malesuada tincidunt et eget purus</p>
+                     <button class="btn btn-primary"><span class="fa fa-link"></span></button>
+                     <button class="btn btn-primary"><span class="fa fa-eye"></span></button>
+                 </div>
+             </a>
+         </div>
+     </div>
+
+     <ul class="pagination pagination-sm pull-right">
+         <li class="disabled"><a href="#">«</a></li>
+         <li class="active"><a href="#">1</a></li>
+         <li><a href="#">2</a></li>
+         <li><a href="#">3</a></li>
+         <li><a href="#">4</a></li>
+         <li><a href="#">»</a></li>
+     </ul>
+   </div>
+   </div>
+                       <!-- ./page content holder -->
+
+
+           <!-- page scripts -->
+
+
+           <script type="text/javascript" src="js/plugins/mixitup/jquery.mixitup.js"></script>
+           <script type="text/javascript" src="js/plugins/appear/jquery.appear.js"></script>
+           <script type="text/javascript">
+   		$(document).ready(function(){
+   				if($(".mix-grid").length > 0)
+   					$(".mix-grid").mixItUp();
+   			});
+   		</script>
 
 
  <?php

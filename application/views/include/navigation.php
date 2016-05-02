@@ -7,13 +7,18 @@
                            <span class="sr-only">Toggle navigation</span>
                            <span class="icon-reorder"></span>
                        </button>
-                       <a class="navbar-brand" href="#"><img src="img/logo_gc_small.png"/></a>
+                       <a class="navbar-brand" href="#"><img src="<?php echo base_url()?>img/logo_gc_small.png"/></a>
                    </div>
                    <div class="collapse navbar-collapse navbar-ex1-collapse">
                        <ul class="nav navbar-nav">
-                         <li class="active">
-                              <a href="#">
+                          <li class="active">
+                              <a href="<?php echo site_url('Accueil') ?>">
                                   <span class="icon-home"></span> Accueil
+                              </a>
+                          </li>
+                          <li class="">
+                              <a href="<?php echo site_url('Formation') ?>">
+                                  <span class="icon-folder-close"></span> Formations
                               </a>
                           </li>
                           <li class="">

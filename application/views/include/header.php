@@ -9,27 +9,28 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
     <link rel="icon" type="image/ico" href="favicon.html"/>
+    <link href="<?php echo base_url()?>css/styles_cat.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo base_url()?>css/stylesheets.css" rel="stylesheet" type="text/css" />
 
-    <link href="css/stylesheets.css" rel="stylesheet" type="text/css" />
 
-    <script type='text/javascript' src='js/plugins/jquery/jquery.min.js'></script>
-    <script type='text/javascript' src='js/plugins/jquery/jquery-ui.min.js'></script>
-    <script type='text/javascript' src='js/plugins/jquery/jquery-migrate.min.js'></script>
-    <script type='text/javascript' src='js/plugins/jquery/globalize.js'></script>
-    <script type='text/javascript' src='js/plugins/bootstrap/bootstrap.min.js'></script>
+    <script type='text/javascript' src='<?php echo base_url()?>js/plugins/jquery/jquery.min.js'></script>
+    <script type='text/javascript' src='<?php echo base_url()?>js/plugins/jquery/jquery-ui.min.js'></script>
+    <script type='text/javascript' src='<?php echo base_url()?>js/plugins/jquery/jquery-migrate.min.js'></script>
+    <script type='text/javascript' src='<?php echo base_url()?>js/plugins/jquery/globalize.js'></script>
+    <script type='text/javascript' src='<?php echo base_url()?>js/plugins/bootstrap/bootstrap.min.js'></script>
 
-    <script type='text/javascript' src='js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js'></script>
-    <script type='text/javascript' src='js/plugins/uniform/jquery.uniform.min.js'></script>
+    <script type='text/javascript' src='<?php echo base_url()?>js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js'></script>
+    <script type='text/javascript' src='<?php echo base_url()?>js/plugins/uniform/jquery.uniform.min.js'></script>
 
-    <script type='text/javascript' src='js/plugins/knob/jquery.knob.js'></script>
-    <script type='text/javascript' src='js/plugins/sparkline/jquery.sparkline.min.js'></script>
-    <script type='text/javascript' src='js/plugins/flot/jquery.flot.js'></script>
-    <script type='text/javascript' src='js/plugins/flot/jquery.flot.resize.js'></script>
+    <script type='text/javascript' src='<?php echo base_url()?>js/plugins/knob/jquery.knob.js'></script>
+    <script type='text/javascript' src='<?php echo base_url()?>js/plugins/sparkline/jquery.sparkline.min.js'></script>
+    <script type='text/javascript' src='<?php echo base_url()?>js/plugins/flot/jquery.flot.js'></script>
+    <script type='text/javascript' src='<?php echo base_url()?>js/plugins/flot/jquery.flot.resize.js'></script>
 
-    <script type='text/javascript' src='js/plugins.js'></script>
-    <script type='text/javascript' src='js/actions.js'></script>
-    <script type='text/javascript' src='js/charts.js'></script>
-    <script type='text/javascript' src='js/settings.js'></script>
+    <script type='text/javascript' src='<?php echo base_url()?>js/plugins.js'></script>
+    <script type='text/javascript' src='<?php echo base_url()?>js/actions.js'></script>
+    <script type='text/javascript' src='<?php echo base_url()?>js/charts.js'></script>
+
 
 </head>
 <body class="wall-num10" data-settings="open" style="">
